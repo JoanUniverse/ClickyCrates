@@ -278,7 +278,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 33656457}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611521166}
+        m_MethodName: OnRegisterButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &33656457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,13 +412,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 117138981}
+  - component: {fileID: 117138982}
   m_Layer: 5
   m_Name: RegisterMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &117138981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -443,6 +455,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &117138982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117138980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0761f50e414321249990f4da3c69e3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstNameInputField: {fileID: 1277358628}
+  lastNameInputField: {fileID: 657409715}
+  nicknameInputField: {fileID: 1718927140}
+  cityInputField: {fileID: 1265822273}
+  emailInputField: {fileID: 422775030}
+  passwordInputField: {fileID: 671700723}
+  confirmPasswordInputField: {fileID: 135234030}
+  loginMenu: {fileID: 611521164}
+  player: {fileID: 829368943}
 --- !u!1 &135234028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1419,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 382707434}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 117138982}
+        m_MethodName: OnBackToLoginMenuButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &382707434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 611521165}
+  - component: {fileID: 611521166}
   m_Layer: 5
   m_Name: LoginMenu
   m_TagString: Untagged
@@ -1835,6 +1880,25 @@ RectTransform:
   m_AnchoredPosition: {x: -4.2201e-10, y: 0}
   m_SizeDelta: {x: 839, y: 317}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &611521166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611521164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08897cffb1db7b54a9b84160ae8401d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailInputField: {fileID: 1280383935}
+  passwordInputField: {fileID: 1334537279}
+  loginButton: {fileID: 1518477468}
+  registerButtonFromLogin: {fileID: 33656456}
+  playerManager: {fileID: 829368943}
+  loginMenu: {fileID: 611521164}
+  registerMenu: {fileID: 117138980}
 --- !u!1 &648319777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,6 +2639,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791311150}
   m_CullTransparentMesh: 0
+--- !u!1 &829368942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829368944}
+  - component: {fileID: 829368943}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &829368943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829368942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde7a0a18949cfe4cb0737dbf45e4622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &829368944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829368942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 401.92374, y: 189.3355, z: -142.64162}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835982483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &912077139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4689,7 +4796,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1518477469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611521166}
+        m_MethodName: OnLoginButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1518477469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5387,7 +5505,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1714063437}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 117138982}
+        m_MethodName: OnRegisterButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1714063437
 MonoBehaviour:
   m_ObjectHideFlags: 0
