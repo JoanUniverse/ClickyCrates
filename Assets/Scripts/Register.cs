@@ -34,7 +34,6 @@ public class Register : MonoBehaviour
         player.LastName = lastNameInputField.text;
         player.City = cityInputField.text;
         player.Nickname = nicknameInputField.text;
-        //player.BirthDay = DateTime.Parse(birthdateInputField.text);
         yield return InsertPlayer();
         player.PlayerId = string.Empty;
         player.Token = string.Empty;
@@ -78,8 +77,10 @@ public class Register : MonoBehaviour
         playerSerializable.FirstName = player.FirstName;
         playerSerializable.LastName = player.LastName;
         playerSerializable.Email = player.Email;
+        playerSerializable.Nickname = player.Nickname;
+        playerSerializable.City = player.City;
 
-        using (UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/RegisterPlayer", "POST"))
+        using (UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/InsertNewPlayer", "POST"))
         {
             string playerData = JsonUtility.ToJson(playerSerializable);
             byte[] bodyRaw = Encoding.UTF8.GetBytes(playerData);

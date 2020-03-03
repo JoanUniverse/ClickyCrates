@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Login : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Login : MonoBehaviour
     public Player playerManager;
     public GameObject loginMenu;
     public GameObject registerMenu;
+    public GameObject loggedInMenu;
+    //public Text playerName;
 
     private string httpServerAddress;
 
@@ -90,6 +93,9 @@ public class Login : MonoBehaviour
         else
         {
             playerManager.PlayerId = httpClient.downloadHandler.text;
+            Debug.Log(httpClient.responseCode);
+            loginMenu.SetActive(false);
+            loggedInMenu.SetActive(true);
         }
 
         httpClient.Dispose();

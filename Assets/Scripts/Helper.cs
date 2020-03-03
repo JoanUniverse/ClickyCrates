@@ -70,7 +70,7 @@ public class Helper : MonoBehaviour
     internal static IEnumerator GetPlayerInfo()
     {
         Player player = FindObjectOfType<Player>();
-        UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/Info", "GET");
+        UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/GetPlayerInfo", "GET");
 
         httpClient.SetRequestHeader("Authorization", "bearer " + player.Token);
         httpClient.SetRequestHeader("Accept", "application/json");
