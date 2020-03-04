@@ -6,17 +6,13 @@ using UnityEngine.UI;
 
 public class LoggedIn : MonoBehaviour
 {
+    public Text playerName;
     public Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = FindObjectOfType<Player>();
+        playerName.text = player.NickName;
     }
 
     public void OnPlayButtonClicked()

@@ -52,12 +52,12 @@ public class Player : MonoBehaviour
         set { _city = value; }
     }
 
-    private string _nickname;
+    private string _nickName;
 
-    public string Nickname
+    public string NickName
     {
-        get { return _nickname; }
-        set { _nickname = value; }
+        get { return _nickName; }
+        set { _nickName = value; }
     }
 
     private void Awake()

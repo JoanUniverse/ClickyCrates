@@ -16,7 +16,6 @@ public class Login : MonoBehaviour
     public GameObject loginMenu;
     public GameObject registerMenu;
     public GameObject loggedInMenu;
-    //public Text playerName;
 
     private string httpServerAddress;
 
@@ -28,9 +27,10 @@ public class Login : MonoBehaviour
 
     public void OnLoginButtonClicked()
     {
-        TryLogin();
+        StartCoroutine(TryLogin());
     }
 
+    /*
     private void GetToken()
     {
         UnityWebRequest httpClient = new UnityWebRequest(httpServerAddress + "/Token", "POST");
@@ -63,42 +63,14 @@ public class Login : MonoBehaviour
             playerManager.Token = authToken.access_token;
         }
         httpClient.Dispose();
-    }
+    }*/
 
-    private void TryLogin()
+    private IEnumerator TryLogin()
     {
-        if (string.IsNullOrEmpty(playerManager.Token))
-        {
-            GetToken();
-        }
-
-        UnityWebRequest httpClient = new UnityWebRequest(httpServerAddress + "/api/Account/UserId", "GET");
-
-        httpClient.SetRequestHeader("Authorization", "bearer " + playerManager.Token);
-        httpClient.SetRequestHeader("Accept", "application/json");
-
-        httpClient.downloadHandler = new DownloadHandlerBuffer();
-        httpClient.certificateHandler = new ByPassCertificate();
-        httpClient.SendWebRequest();
-
-        while (!httpClient.isDone)
-        {
-            Task.Delay(1);
-        }
-
-        if (httpClient.isNetworkError || httpClient.isHttpError)
-        {
-            Debug.Log(httpClient.error);
-        }
-        else
-        {
-            playerManager.PlayerId = httpClient.downloadHandler.text;
-            Debug.Log(httpClient.responseCode);
-            loginMenu.SetActive(false);
-            loggedInMenu.SetActive(true);
-        }
-
-        httpClient.Dispose();
+        yield return Helper.InitializeToken(emailInputField.text, passwordInputField.text);
+        yield return Helper.GetPlayerInfo();
+        loginMenu.SetActive(false);
+        loggedInMenu.SetActive(true);
     }
 
     public void OnRegisterButtonClicked()

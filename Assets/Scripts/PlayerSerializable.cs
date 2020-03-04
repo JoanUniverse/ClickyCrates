@@ -8,6 +8,6 @@ public class PlayerSerializable
     public string FirstName;
     public string LastName;
     public string City;
-    public string Nickname;
+    public string NickName;
     public string ConnectedSince;
 }

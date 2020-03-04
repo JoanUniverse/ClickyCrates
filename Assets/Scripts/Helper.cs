@@ -89,9 +89,10 @@ public class Helper : MonoBehaviour
             player.PlayerId = playerSerializable.Id;
             player.FirstName = playerSerializable.FirstName;
             player.LastName = playerSerializable.LastName;
-            player.Nickname = playerSerializable.Nickname;
+            player.NickName = playerSerializable.NickName;
             player.City = playerSerializable.City;
             player.Email = playerSerializable.Email;
+            Debug.Log(httpClient.responseCode);
         }
 
         httpClient.Dispose();
