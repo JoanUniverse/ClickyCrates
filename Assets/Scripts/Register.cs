@@ -96,6 +96,8 @@ public class Register : MonoBehaviour
                 throw new Exception("RegisterNewPlayer > InsertPlayer: " + httpClient.error);
             }
 
+            OnBackToLoginMenuButtonClicked();
+
             //messageBoardText.text += "\nRegisterNewPlayer > InsertPlayer: " + httpClient.responseCode;
         }
     }

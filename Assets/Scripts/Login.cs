@@ -23,6 +23,11 @@ public class Login : MonoBehaviour
     {
         playerManager = FindObjectOfType<Player>();
         httpServerAddress = playerManager.GetHttpServer();
+        if (!string.IsNullOrEmpty(playerManager.Token))
+        {
+            loginMenu.SetActive(false);
+            loggedInMenu.SetActive(true);
+        }
     }
 
     public void OnLoginButtonClicked()
@@ -78,4 +83,5 @@ public class Login : MonoBehaviour
         loginMenu.SetActive(false);
         registerMenu.SetActive(true);
     }
+
 }

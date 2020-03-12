@@ -101,9 +101,16 @@ public class Helper : MonoBehaviour
     internal static IEnumerator NewPlayerOnline()
     {
         Player player = FindObjectOfType<Player>();
+        PlayerSerializable playerSerializable = new PlayerSerializable();
+        playerSerializable.Id = player.PlayerId;
+        playerSerializable.FirstName = player.FirstName;
+        playerSerializable.LastName = player.LastName;
+        playerSerializable.Email = player.Email;
+        playerSerializable.NickName = player.NickName;
+        playerSerializable.City = player.City;
         UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/NewPlayerOnline", "POST"); ;
 
-        string jsonData = JsonUtility.ToJson(player);
+        string jsonData = JsonUtility.ToJson(playerSerializable);
         byte[] dataToSend = Encoding.UTF8.GetBytes(jsonData);
         httpClient.uploadHandler = new UploadHandlerRaw(dataToSend);
         httpClient.SetRequestHeader("Content-Type", "application/json");
@@ -121,4 +128,23 @@ public class Helper : MonoBehaviour
         httpClient.Dispose();
     }
 
+    internal static IEnumerator DeletePlayerOnline()
+    {
+        Player player = FindObjectOfType<Player>();
+       
+        UnityWebRequest httpClient = new UnityWebRequest(player.GetHttpServer() + "/api/Player/DeletePlayerOnline", "POST"); ;
+
+        httpClient.SetRequestHeader("Content-Type", "application/json");
+        httpClient.SetRequestHeader("Authorization", "bearer " + player.Token);
+
+        httpClient.certificateHandler = new ByPassCertificate();
+        yield return httpClient.SendWebRequest();
+
+        if (httpClient.isNetworkError || httpClient.isHttpError)
+        {
+            throw new Exception("OnDeletePlayerOnline: Error > " + httpClient.error);
+        }
+
+        httpClient.Dispose();
+    }
 }
