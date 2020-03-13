@@ -2,7 +2,7 @@
 
 public class Player : MonoBehaviour
 {
-    private const string httpServer = "https://localhost:44353";
+    private const string httpServer = "https://quetglasclickycrateswebapi.azurewebsites.net";
     public string GetHttpServer()
     {
         return httpServer;

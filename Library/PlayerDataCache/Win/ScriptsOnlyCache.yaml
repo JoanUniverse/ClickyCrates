@@ -6,6 +6,8 @@ ScriptsOnlyBuild:
     - GameManager
     - LoggedIn
     - Login
+    - MyGames
+    - MyProfile
     - Player
     - Register
     - Target
@@ -62,27 +64,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10256}
+      Script: {instanceID: 10192}
     - Class: 114
-      Script: {instanceID: 10280}
+      Script: {instanceID: 10258}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10282}
     - Class: 114
-      Script: {instanceID: 10782}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10784}
     - Class: 114
-      Script: {instanceID: 10824}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 10826}
     - Class: 114
-      Script: {instanceID: 11188}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 11236}
+      Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11386}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11392}
+    - Class: 114
+      Script: {instanceID: 11458}
+    - Class: 114
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -139,25 +145,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10256}
+      Script: {instanceID: 10258}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 10278}
     - Class: 114
-      Script: {instanceID: 10364}
+      Script: {instanceID: 10366}
     - Class: 114
-      Script: {instanceID: 10492}
+      Script: {instanceID: 10494}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10936}
     - Class: 114
-      Script: {instanceID: 10984}
+      Script: {instanceID: 10988}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 11386}
+      Script: {instanceID: 11392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -331,7 +337,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 5a2528140ec40474d8ad550ee444d8c6
+      Hash: d06e5afa30711e769521c0f102f931da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LoggedIn
@@ -341,6 +347,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: c6f88080c4fcfe8df9ce9a0fa1a29a24
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MyProfile
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -505,7 +517,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 510d4f3835049058bff99c8abdfdf98a
+      Hash: ea11ce2a982222dd264618cf21bb0424
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -647,6 +659,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Login
+  - hash:
+      serializedVersion: 2
+      Hash: 47a9cc2bbca7feb39e39cb9fda6307d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MyGames
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menus.unity

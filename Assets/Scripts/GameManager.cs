@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     public GameObject titleScreen;
     public Button restartButton;
     public Button mainMenu;
+    public Button quitButton;
     public TextMeshProUGUI gameOverText;
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
     public Text playersOnline;
+    public Text playerText;
     private int score;
     private float spawnRate = 1.0f;
     public bool isGameActive;
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player player = FindObjectOfType<Player>();
+        playerText.text = player.NickName;   
         StartCoroutine(RefreshPlayersOnline());
     }
 
@@ -51,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        quitButton.gameObject.SetActive(true);
         mainMenu.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(true);
@@ -145,5 +150,11 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(Helper.DeletePlayerOnline());
         SceneManager.LoadScene(0);
+    }
+
+    public void OnQuitButtonClicked()
+    {
+        StartCoroutine(Helper.DeletePlayerOnline());
+        Application.Quit();
     }
 }

@@ -84,4 +84,8 @@ public class Login : MonoBehaviour
         registerMenu.SetActive(true);
     }
 
+    public void OnQuitButtonClicked()
+    {
+        Application.Quit();
+    }
 }

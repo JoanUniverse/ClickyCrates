@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ListOfPlayers.cs" />
     <Compile Include="Assets\Scripts\LoggedIn.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
+    <Compile Include="Assets\Scripts\MyGames.cs" />
     <Compile Include="Assets\Scripts\MyProfile.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerSerializable.cs" />

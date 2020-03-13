@@ -14,6 +14,7 @@ public class MyProfile : MonoBehaviour
     public InputField nickNameInputField;
     public InputField cityInputField;
     public GameObject loggedInMenu;
+    public GameObject myGamesMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,5 +72,11 @@ public class MyProfile : MonoBehaviour
     public void OnUpdateButtonClick()
     {
         StartCoroutine(UpdatePlayer());
+    }
+
+    public void OnMyGamesButtonClicked()
+    {
+        gameObject.SetActive(false);
+        myGamesMenu.SetActive(true);
     }
 }

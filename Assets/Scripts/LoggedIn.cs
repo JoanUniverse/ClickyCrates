@@ -22,7 +22,7 @@ public class LoggedIn : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         playerName.text = player.NickName;
-        StartCoroutine(GetLastGames());
+        StartCoroutine(RefreshPlayersOnline());
     }
 
     public void OnPlayButtonClicked()
@@ -80,5 +80,14 @@ public class LoggedIn : MonoBehaviour
     private IEnumerator NewPlayerOnlineCommit()
     {
         yield return Helper.NewPlayerOnline();
+    }
+
+    private IEnumerator RefreshPlayersOnline()
+    {
+        while (true)
+        {
+            StartCoroutine(GetLastGames());
+            yield return new WaitForSeconds(2);
+        }
     }
 }
